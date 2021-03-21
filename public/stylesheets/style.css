@@ -1,0 +1,178 @@
+/* ***************************************************************************************************
+________________________________________________Nav Bar____________________________________________
+*************************************************************************************************** */
+.logo h2 {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
+  color: white;
+  background: -webkit-linear-gradient(#1454d9, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+.nav-menu:hover {
+  transform: scale(1.04);
+}
+nav {
+  background-color: #031e55;
+}
+
+footer {
+  background-color: #020061;
+  color: #ffffff !important;
+}
+/* ***************************************************************************************************
+________________________________________________Index Page____________________________________________
+*************************************************************************************************** */
+.div1{
+    height: 500px;
+    background-image: url("https://assets.telegraphindia.com/abped/2020/Sep/1600356731_career-counselling.jpg");
+    background-repeat: no-repeat;
+    background-position: 450px 10px;
+  }
+  .div1 h1{
+    color: orange;
+    position: relative;
+    top: 40px;
+  }
+  .div1 h2{
+    color: #5973bd;
+    position: relative;
+    top: 40px;
+  }
+  .div2{
+    height: 550px;
+    background-image: url("https://media.istockphoto.com/vectors/employee-contender-woman-and-impressed-employer-interviewer-job-meet-vector-id960866480?b=1&k=6&m=960866480&s=612x612&w=0&h=yjvNhAwl7twZl94KPpL4xyhFZAdHbsRn6L2G8AHcA5w=");
+    background-repeat: no-repeat;
+    background-position: 100px 0px;
+    font-weight: bold;
+    background-color: #f0f9fc;
+  }
+  .div3{
+    height: 500px;
+    background-image: url("https://media.istockphoto.com/vectors/psychologist-online-psychotherapy-practice-psychological-help-vector-id1211384629?k=6&m=1211384629&s=612x612&w=0&h=1kCUxgv_eQUR9-k8_mjdP7y8xxF9u3H4bD2q3iKYCpA=");
+    background-repeat: no-repeat;
+    background-position: 750px 160px;
+    font-weight: bold;
+    margin-bottom: 200px;
+  }
+  .div3 h1{
+    color: #127a7c;
+  }
+  .div3 h2{
+    color: #324799;
+  }
+
+  
+  /* ****************************************************************************************************
+  ___________________________________Login Page / SignUp Page____________________________________________
+  **************************************************************************************************** */
+  .logindiv{
+    height: 700px;
+    background-image: url("https://youthmentors.shinefromwithin.com.au/wp-content/uploads/2016/10/login-page-background-image-3-2.png");
+    background-repeat: no-repeat;
+  }
+
+  /* ****************************************************************************************************
+  ____________________________________________After 12th  Page____________________________________________
+  **************************************************************************************************** */
+  .after-12_div-1 {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+ 
+    justify-content: center;
+  }
+  .after-12_div-1::before {    
+    content: "";
+    background-image: url('https://cdn.the-scientist.com/assets/articleNo/65910/aImg/32098/minorities-in-stem-education-l.png');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+  .after-12_div-2 {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .after-12_div-2::before {    
+    content: "";
+    background-size: 1900px 1000px;
+    background-image: url("https://image.freepik.com/free-photo/copy-space-golden-canvas-frame-brushes_23-2148660977.jpg");
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: -270px -150px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.35;
+  }
+  .after-12_div-3 {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .after-12_div-3::before {    
+    content: "";
+    background-image: url('https://image.freepik.com/free-photo/calculator-financial-statement-balance-sheeet-desk-auditor-concept-accounting-audit-business_132358-3340.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.45;
+  }
+  .after-12_div-4 {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .after-12_div-4::before {    
+    content: "";
+    background-image: url('https://image.freepik.com/free-vector/realistic-chemistry-laboratory-tubes-set_208581-881.jpg');
+    background-size: 1000px 700px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position-x: -160px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.45;
+  }
+  .doublemax{
+    font-size: 80px;
+    color: #020061;
+  }
+  .pink-h2{
+      color: #500539;
+  }
+  .doublemax-red{
+    font-size: 80px;
+    color: #9b0a11;
+  }
+  .after12-div-content{
+    position: relative;
+  }
+  .btn-extra-lg{
+    height: 65px;
+  }
+  .btn:hover {
+    transform: scale(1.01);
+  }

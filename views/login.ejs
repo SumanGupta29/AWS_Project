@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+
+<div class="logindiv">
+    <div class="row">
+      <div class="col-4 offset-sm-4">
+        <div class="card shadow-lg mt-5">
+          <div class="card-body">
+            <h3>USER AUTHENTICATION</h3>
+            <form action="/login" method="POST">
+              <div class="mb-3">
+                <label class="form-label">Email address:</label>
+                <input type="email" class="form-control" name="username" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password:</label>
+                <input type="password" class="form-control" name="password" required>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <button type="submit" class="btn btn-success"><b>Login</b></button>
+                </div>
+                <div class="col-6">
+                  <h6>Need an account? <a href="/register">SignUp</a></h6>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('./partials/footer') %>

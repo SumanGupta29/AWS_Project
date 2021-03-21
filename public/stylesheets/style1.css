@@ -1,0 +1,37 @@
+.grad{
+    padding-top: 0px;
+    background-color: #ffe6f3;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.spacing{
+    padding-top: 50px;
+}
+.h5{
+    color: black;
+    font-weight: bolder;
+}
+.info{
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.size{
+    width: 100px;
+    height: 500px;
+}
+.carousel-inner{
+    width: 800px;
+}
+.content{
+    font-size: x-large;
+    padding-top: 10px;
+}
+.yes{
+    height: 300px;
+}
+.card-title{
+    font-size: medium;
+    text-align: center;
+}

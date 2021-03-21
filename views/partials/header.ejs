@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CareerGuidance</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style1.css">
+    <link rel="stylesheet" href="/stylesheets/style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark">
+      <div class="container nav-bar">
+        <span class="navbar-brand mb-0 logo"><a href="/"><h2><i class="fa fa-graduation-cap"></i>CareerGuidance</h2></a></span>
+        
+        <% if(currentUser){ %>
+          <% if(currentUser.counsellor == "Yes"){ %>
+            <a href="/counsellor_panel"><span class="navbar-brand mx-4"><b>Counsellor Panel</b></span></a>
+          <% } %>
+        <% } %>
+
+        <div class="nav-item dropdown col offset-sm-3 d-flex justify-content-right">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <b>Explore</b>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="/after_10th"><b>After 10th</b></a></li>
+            <li><a class="dropdown-item" href="/after-12_courses"><b>After 12th</b></a></li>
+            <li><a class="dropdown-item" href="/after_graduation"><b>After Graduation</b></a></li>
+          </ul>
+        </div>
+
+        <% if(currentUser){ %>
+          <% if(currentUser.counsellor == "No"){ %>
+            <a href="/login"><span class="navbar-brand mx-4"><b>Hello, <%= currentUser.username %></b></span></a>
+          <% } %>
+        <% }else{ %>
+        <a href="/login"><span class="navbar-brand mx-4"><b><i class="fa fa-sign-in"></i>  Login</b></span></a>
+        <% } %>
+      </div>
+    </nav>

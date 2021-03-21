@@ -1,0 +1,124 @@
+<%- include('./partials/header') %>  
+  
+  <div class="container div1">
+    <h1>Confused about Career Choices??</h1>
+    <h2>Discover your Perfect Career with our Career Experts</h2>
+    <br>
+    <a href="#div2"><button type="button" class="btn btn-primary mt-5 btn-lg"><b>Join Now</b></button></a>
+    <br>
+    <a href="#explore"><button type="button" class="btn btn-outline-warning mt-5 btn-lg"><b>Explore Career Opportunities</b></button></a>
+  </div>
+  <div class="div2">
+    <div class="container" id="div2">
+      <div class="row">
+          <div class="col-5 offset-md-7">
+            <div class="card mt-4 shadow-lg">
+              <div class="card-body">
+                <form action="/request_call" method="post">
+                  <div class="mb-3">
+                    <label class="form-label">Full name:</label>
+                    <input type="text" class="form-control" name="name">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email address:</label>
+                    <input type="email" class="form-control" name="email">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Phone no:</label>
+                    <input type="number" class="form-control" name="phone">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">I need help with:</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="help" value="Choosing my Stream">
+                      <label class="form-check-label">
+                        Choosing my stream
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="help" value="Choosing my Career">
+                      <label class="form-check-label">
+                        Choosing my career
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">I am a:</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="role" value="Student">
+                      <label class="form-check-label">
+                        Student
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="role" value="Father">
+                      <label class="form-check-label">
+                        Father
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="role" value="Mother">
+                      <label class="form-check-label">
+                        Mother
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="role" value="Other">
+                      <label class="form-check-label">
+                        Other
+                      </label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-info"><b>Request a Call back</b></button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container div3 mt-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="">
+          <h1 class="text-center">Our Services</h1>
+          <h2>What you can expect?</h2>
+          <h4>Our Career Counsellor will:</h4>
+          <h6>
+            Help you figure out who you are and what you want out of your education, your career, and your life.<br>
+            Be someone for you to talk to about your thoughts, ideas, feelings, and concerns about your career and educational choices, who will help you sort out, organize, and make sense of your thoughts and feelings.<br>
+            Help you identify the factors influencing your career development, and help you assess your interests, abilities, and values.<br>
+            Help you locate resources and sources of career information.<br>
+            Help you to determine next steps and develop a plan to achieve your goals.<br>
+          </h6>
+          <h4>Exploring Career and Major Options like:</h4>
+          <h6>
+            “I have no idea what I want to do with my life.” <br>
+            “I don’t know what to major in.” <br>
+            “I’ve narrowed it down to a couple career options, but I’m having a hard time choosing between them.” <br>
+            “I know what I want to major in, but I have no idea what I want to do once I graduate.” <br>
+          </h6>
+          <h4>Resolving Conflicts like:</h4>
+          <h6>
+            “I like a lot of different subjects, and I keep changing my major because I’m not sure which one is the best for me!” <br>
+            “I don’t like any of my classes and none of the majors seem really appealing to me.” <br>
+            “I have a lot of work experience and I want to find a new career path that will build on the skills I already have.” <br>
+            “I was planning on going into the _______ program, but I applied and didn’t get in. What do I do now?” <br>
+          </h6>
+          <h2 class="mt-5">Have a look on various streams and opportunities available after:</h2>
+          <div class="card mt-4" id="explore">
+            <div class="btn-group" role="group">
+              <a class="btn btn-warning btn-extra-lg" href="#" role="button"><h3 class="mt-1">10th</h3></a>
+              <a class="btn btn-light btn-extra-lg" href="/after-12_courses" role="button"><h3 class="mt-1">12th</h3></a>
+              <a class="btn btn-success btn-extra-lg" href="/after_graduation" role="button"><h3 class="mt-1">Graduation</h3></a>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include('./partials/footer') %>  

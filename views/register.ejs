@@ -1,0 +1,112 @@
+<%- include('./partials/header') %>
+
+    <div class="logindiv">
+      <div class="row">
+        <div class="col-4 offset-sm-4">
+          <div class="card shadow-lg">
+            <div class="card-body">
+              <h3>USER REGISTRATION</h3>
+              <form action="/register" method="POST" >
+                <div class="mb-3">
+                  <label class="form-label">Full Name:</label>
+                  <input type="text" class="form-control" name="name" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email address:</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="mb-3">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="counsellor" id="counsellor" value="Yes">
+                    <label class="form-check-label">
+                      I am a Counsellor
+                    </label>
+                  </div>
+                </div>
+                <div class="mb-3" id="upload" style="display: none">
+                  <label class="form-label">Upload your degree:</label>
+                  <input type="file" class="form-control"  name="degree">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password:</label>
+                  <input type="password" class="form-control"  name="password1" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Re-enter Password:</label>
+                  <input type="password" class="form-control" name="password2"  required>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button type="submit"  class="btn btn-success"><b>Register</b></button>
+                  </div>
+                  <div class="col-6">
+                    <h6>Already registered? <a href="/login">Login</a></h6>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $("#counsellor").click(function () {
+            if ($(this).is(":checked")) {
+                $("#upload").show();
+            } else {
+                $("#upload").hide();
+            }
+        });
+      }); 
+      // $("#VerifyUpload").click(function() {
+      //     if ($("#yes").is(":checked")) {
+      //       var fileName = $("#degree").val();
+      //       if(!fileName) {
+      //           alert("No file selected");
+      //       }
+      //       else{
+      //         var name = $("#name").val();
+      //         var email = $("#email").val();
+      //         var pass1 = $("#password1").val();
+      //         var pass2 = $("#password2").val();
+      //         if(name && email && pass1 && pass2){
+      //           console.log(name+"   "+email+"   "+pass1+"   "+pass2+"   ")
+      //           if(pass1 != pass2){
+
+      //             alert("Password does not match!!");
+      //           }
+      //           else{
+
+      //             alert("Registered Successfully");
+      //             $("form").submit();
+      //           }
+      //         }
+      //       }
+      //     }
+      //   else{
+      //       var name = $("#name").val();
+      //       var email = $("#email").val();
+      //       var pass1 = $("#password1").val();
+      //       var pass2 = $("#password2").val();
+      //       if(name && email && pass1 && pass2){
+      //         console.log(name+"   "+email+"   "+pass1+"   "+pass2+"   ")
+      //         if(pass1 != pass2){
+
+      //           alert("Password does not match!!");
+      //         }
+      //         else{
+
+      //           alert("Registered Successfully");
+      //           $("form").submit();
+      //         }
+      //       }
+
+      //     }
+      // });
+    </script>
+
+<%- include('./partials/footer') %>
+

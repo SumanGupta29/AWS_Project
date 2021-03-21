@@ -1,0 +1,110 @@
+<%- include('./partials/header') %>
+
+<!-- <script>
+  var addSubject = document.getElementById("addSubject");
+  console.log(addSubject);
+  addSubject.onclick = function(){
+    subjectDiv = document.getElementById("addsubject");
+    newSubject = document.createElement("input");
+    newSubject.setAttribute("type", "text");
+    newSubject.setAttribute("name", "course_subjects[]");
+    newSubject.setAttribute("class", "course_subjects");
+    subjectDiv.appendChild(newSubject);
+  }
+  function removeSubject(){
+    subjectDiv = document.getElementById("removesubject");
+    newSubject = document.createElement("input");
+    newSubject.setAttribute("type", "text");
+    newSubject.setAttribute("name", "course_subjects[]");
+    newSubject.setAttribute("class", "course_subjects");
+    newSubject.setAttribute('fontSize','150%');
+    subjectDiv.appendChild(newSubject);
+  }
+</script> -->
+
+<div class="row">
+  <div class="col-md-4 col-sm-6 offset-sm-4">
+    <div class="card mt-4 shadow-lg">
+      <div class="card-body">
+        <form action="/admin_insert" method="POST">
+          <div class="mb-3">
+            <label class="form-label"><b>Course name:</b> </label>
+            <input type="text" class="form-control" name="course_name">
+          </div>
+          <div class="mb-3 form-check-inline col-7">
+            <label class="form-label"><b>Stream:</b></label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="stream" id="Science">
+              <label class="form-check-label">
+                <b>Science</b>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="stream" id="Commerce">
+              <label class="form-check-label">
+                <b>Commerce</b>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="stream" id="Arts">
+              <label class="form-check-label">
+                <b>Arts</b>
+              </label>
+            </div>
+          </div>
+          <div class="mb-3 form-check-inline">
+            <label class="form-label"><b>After:</b></label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="after" id="10th">
+              <label class="form-check-label">
+                <b>10th</b>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="after" id="12th">
+              <label class="form-check-label">
+                <b>12th</b>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="after" id="Graduation">
+              <label class="form-check-label">
+                <b>Graduation</b>
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><b>Course subjects:</b></label>
+            <div class="mb-3 input-group">
+              <input type="text" class="form-control course_subjects" name="course_subjects[]">
+              <!-- <div class="input-group-append" style="font-size: 0.6rem;">
+                <a href="#" id="addSubject"><span class="input-group-text fa fa-plus fa-2x"></span></a>
+                <button onclick="removeSubject()"><span class="input-group-text fa fa-minus fa-2x"></span></button>
+              </div> -->
+            </div>
+            <!-- <div id="addsubject"></div> -->
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><b>Entrance exams:</b></label>
+            <input type="text" class="form-control" name="entrance_exam">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><b>Average course fee:</b></label>
+            <input type="text" class="form-control" name="avg_fee">
+          </div>
+          <div class="form-group">
+            <label><b>Course details:</b></label>
+            <textarea class="form-control" name="course_details" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><b>Image url:</b></label>
+            <input type="text" class="form-control" name="course_image">
+          </div>
+          <button type="submit" class="btn btn-success"><b>Insert</b></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
