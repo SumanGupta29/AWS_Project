@@ -35,6 +35,9 @@
         <% if(currentUser){ %>
           <% if(currentUser.counsellor == "No"){ %>
             <a href="/login"><span class="navbar-brand mx-4"><b>Hello, <%= currentUser.username %></b></span></a>
+            <div class="nav-item mr-0">
+              <a class="nav-link" href="/logout">Logout <i class="fa fa-sign-in fa-lg"></i></a>
+            </div>
           <% } %>
         <% }else{ %>
         <a href="/login"><span class="navbar-brand mx-4"><b><i class="fa fa-sign-in"></i>  Login</b></span></a>

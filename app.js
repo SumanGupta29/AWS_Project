@@ -152,6 +152,12 @@ app.post("/login", passport.authenticate("local", {
     }), function(req, res){}
 );
 
+app.get("/logout", function(req, res){
+    req.logout();
+    req.flash("success", "Logged you out");
+    res.redirect("/");
+});
+
 app.post("/register",(req, res) => {
     var fullname = req.body.fullname;
     var username = req.body.email;
