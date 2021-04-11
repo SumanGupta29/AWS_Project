@@ -176,7 +176,7 @@ app.post("/register",(req, res) => {
           return res.redirect("/register");
         }
         passport.authenticate("local", {
-          successRedirect: "/",
+          successRedirect: "/login",
           failureRedirect: "/register",
         })(req, res);
       });

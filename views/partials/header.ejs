@@ -11,36 +11,45 @@
     <script src="https://kit.fontawesome.com/5130183192.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-dark">
-      <div class="container nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid nav-bar col-md-10">
         <span class="navbar-brand mb-0 logo"><a href="/"><h2><i class="fa fa-graduation-cap"></i>CareerGuidance</h2></a></span>
-        
-        <% if(currentUser){ %>
-          <% if(currentUser.counsellor == "Yes"){ %>
-            <a href="/counsellor_panel"><span class="navbar-brand mx-4"><b>Counsellor Panel</b></span></a>
-          <% } %>
-        <% } %>
-
-        <div class="nav-item dropdown col offset-sm-3 d-flex justify-content-right">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <b>Explore</b>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="/after_10th"><b>After 10th</b></a></li>
-            <li><a class="dropdown-item" href="/after-12_courses"><b>After 12th</b></a></li>
-            <li><a class="dropdown-item" href="/after_graduation"><b>After Graduation</b></a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <% if(currentUser){ %>
+                <% if(currentUser.counsellor == "Yes"){ %>
+                  <a href="/counsellor_panel" class="nav-link active" >Counsellor Panel</a>
+                <% } %>
+              <% } %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <b>Explore</b>
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/after_10th"><b>After 10th</b></a></li>
+                <li><a class="dropdown-item" href="/after-12_courses"><b>After 12th</b></a></li>
+                <li><a class="dropdown-item" href="/after_graduation"><b>After Graduation</b></a></li>
+              </ul>
+            </li>
           </ul>
-        </div>
-
-        <% if(currentUser){ %>
-          <% if(currentUser.counsellor == "No"){ %>
-            <a href="/login"><span class="navbar-brand mx-4"><b>Hello, <%= currentUser.username %></b></span></a>
-            <div class="nav-item mr-0">
+          <% if(currentUser){ %>
+            <% if(currentUser.counsellor){ %>
+              <a href="/login"><span class="navbar-brand mx-4"><b>Hello, <%= currentUser.username %></b></span></a>
+              <div class="nav-item mr-0">
               <a class="nav-link" href="/logout">Logout <i class="fa fa-sign-in fa-lg"></i></a>
-            </div>
+              </div>
+            <% } %>
+          <% }else{ %>
+          <a href="/login"><span class="navbar-brand"><b><i class="fa fa-sign-in"></i>  Login</b></span></a>
           <% } %>
-        <% }else{ %>
-        <a href="/login"><span class="navbar-brand mx-4"><b><i class="fa fa-sign-in"></i>  Login</b></span></a>
-        <% } %>
+        </div>
       </div>
     </nav>

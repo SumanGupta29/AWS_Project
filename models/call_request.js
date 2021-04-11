@@ -5,7 +5,11 @@ CallRequestSchema = new mongoose.Schema({
     email : String,
     phone : String,
     needHelpIn : String,
-    role : String
+    role : String,
+    status : {
+        type : String,
+        default : "Pending"
+    }
 })
 
 
