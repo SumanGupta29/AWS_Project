@@ -14,7 +14,9 @@
           <div class="col-5 offset-md-7">
             <div class="card mt-4 shadow-lg">
               <div class="card-body">
-                <form action="/request_call" method="post">
+                <% if(currentUser){ %>
+                <form action="/request_call/<%= currentUser._id %>" method="post">
+                <% } %>
                   <div class="mb-3">
                     <label class="form-label">Full name:</label>
                     <input type="text" class="form-control" name="name">
@@ -70,7 +72,11 @@
                       </label>
                     </div>
                   </div>
+                  <% if(currentUser){ %> 
                   <button type="submit" class="btn btn-info"><b>Request a Call back</b></button>
+                  <% } else { %>
+                  <button type="submit" class="btn btn-info" disabled><b>Request a Call back</b></button>  
+                  <% } %> 
                 </form>
               </div>
             </div>
@@ -110,7 +116,7 @@
           <h2 class="mt-5">Have a look on various streams and opportunities available after:</h2>
           <div class="card mt-4" id="explore">
             <div class="btn-group" role="group">
-              <a class="btn btn-warning btn-extra-lg" href="#" role="button"><h3 class="mt-1">10th</h3></a>
+              <a class="btn btn-warning btn-extra-lg" href="/after_10th" role="button"><h3 class="mt-1">10th</h3></a>
               <a class="btn btn-light btn-extra-lg" href="/after-12_courses" role="button"><h3 class="mt-1">12th</h3></a>
               <a class="btn btn-success btn-extra-lg" href="/after_graduation" role="button"><h3 class="mt-1">Graduation</h3></a>
             </div>

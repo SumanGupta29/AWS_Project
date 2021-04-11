@@ -1,20 +1,13 @@
 <%- include('./partials/header') %> 
 
 <div class="container counsellor-panel-div">
-    <div class="row">
-        <div class="col-sm-6 col-md-5 col-lg-4">
-            <h1>Call Requests </h1>
-        </div>
-        <div class="col-sm-6 col-md-5 col-lg-4 offset-md-2 offset-lg-4">
-            <button><a href="/accepted_requests"><h3>Accepted Requests </h3></a></button>
-        </div>
-    </div>
     <table class="table table-dark table-sm">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Phone no.</th>
                 <th scope="col">Need help for?</th>
                 <th scope="col">Role</th>
                 <th scope="col"></th>
@@ -22,15 +15,15 @@
         </thead>
         <tbody>
             <% var i=0 %>
-            <% call_req.forEach(function(req){ %>
+            <% acc_req.forEach(function(req){ %>
             <tr>
                 <% i+=1 %>
                 <th scope="row"><%= i %></th>
                 <td><%= req.name %></td>
                 <td><%= req.email %></td>
+                <td><%= req.phone %></td>
                 <td><%= req.needHelpIn %></td>
                 <td><%= req.role %></td>
-                <td><button><a href="/accepted_requests/<%= req._id %>">Accept</a></button></td>
             </tr>
             <% }); %>
         </tbody>

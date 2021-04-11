@@ -26,6 +26,8 @@
               <% if(currentUser){ %>
                 <% if(currentUser.counsellor == "Yes"){ %>
                   <a href="/counsellor_panel" class="nav-link active" >Counsellor Panel</a>
+                <% } else { %>
+                  <a href="/request_status/<%= currentUser._id %>" class="nav-link active" >Request Status</a>
                 <% } %>
               <% } %>
             </li>

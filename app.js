@@ -50,15 +50,17 @@ app.get("/request_call", isLoggedin, (req, res) => {
     res.render("/");
 });
 
-app.post("/request_call", isLoggedin, (req, res) => {
+app.post("/request_call/:id", isLoggedin, (req, res) => {
+    var user_id = req.params.id;
     var name = req.body.name;
     var email = req.body.email;
     var phone = req.body.phone;
     var needHelpIn = req.body.help;
     var role = req.body.role;
-    console.log(name, email, needHelpIn, phone, role);
+    console.log(user_id, name, email, needHelpIn, phone, role);
 
     var CallRequestData = new CallRequest({
+        user_id : user_id,
         name : name,
         email : email,
         phone : phone,
@@ -79,11 +81,24 @@ app.post("/request_call", isLoggedin, (req, res) => {
             res.render("landing");
         }
     });
+});
 
+app.get("/request_status/:id", (req,res)=>{
+    console.log(req.params.id);
+    CallRequest.find({user_id : req.params.id}, (err, reqstats) => {
+        var reqstatsflag = 1;
+        if(reqstats == ""){
+            reqstatsflag = 0;
+            res.render("request_status", {reqstatsflag : reqstatsflag});
+        }else{
+            res.render("request_status", {reqstats : reqstats, reqstatsflag : reqstatsflag});
+        }
+        
+    });
 });
 
 app.get("/counsellor_panel", isLoggedin, isCounsellor, (req, res) => {
-    CallRequest.find({}, (err, call_req) => {
+    CallRequest.find({status:"Pending"}, (err, call_req) => {
         if(err){
             console.log("Oops! no request available");
             res.render("counsellor_panel");
@@ -92,6 +107,34 @@ app.get("/counsellor_panel", isLoggedin, isCounsellor, (req, res) => {
             res.render("counsellor_panel", {call_req : call_req});
         }
     });
+});
+
+app.get("/accepted_requests", isLoggedin, isCounsellor, (req, res) => {
+    CallRequest.find({status:"Accepted"}, (err, acc_req)=>{
+        if(err){
+            console.log(err);
+        } else {
+            res.render("accepted_requests", {acc_req : acc_req});
+        }
+    });
+});
+
+app.get("/accepted_requests/:id", isLoggedin, isCounsellor, (req, res)=>{
+    CallRequest.findById(req.params.id, (err, accepted_req)=>{
+        if(err){
+            console.log(err);
+            res.render("counsellor_panel");
+        } else {
+            CallRequest.findOneAndUpdate({_id : req.params.id}, {$set : {status:"Accepted"}}, (err, status_changed)=>{
+                if(err){
+                    console.log(err);
+                } else{
+                    console.log(accepted_req);
+                }
+            });
+        }
+    });
+    res.render("accepted_requests");
 });
 
 app.get("/after_10th",(req,res) => {
