@@ -14,18 +14,21 @@
             </tr>
         </thead>
         <tbody>
-            <% var i=0 %>
-            <% acc_req.forEach(function(req){ %>
-            <tr>
-                <% i+=1 %>
-                <th scope="row"><%= i %></th>
-                <td><%= req.name %></td>
-                <td><%= req.email %></td>
-                <td><%= req.phone %></td>
-                <td><%= req.needHelpIn %></td>
-                <td><%= req.role %></td>
-            </tr>
-            <% }); %>
+            <% if(true){ %>
+                <% var i=0 %>
+                <% acc_req.forEach(function(req){ %>
+                <tr>
+                    <% i+=1 %>
+                    <th scope="row"><%= i %></th>
+                    <td><%= req.name %></td>
+                    <td><%= req.email %></td>
+                    <td><%= req.phone %></td>
+                    <td><%= req.needHelpIn %></td>
+                    <td><%= req.role %></td>
+                </tr>
+                <% }); %>
+            <% } %>
+            
         </tbody>
     </table>
 </div>

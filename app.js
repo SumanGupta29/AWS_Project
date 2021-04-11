@@ -114,18 +114,20 @@ app.get("/accepted_requests", isLoggedin, isCounsellor, (req, res) => {
         if(err){
             console.log(err);
         } else {
+            console.log(acc_req);
             res.render("accepted_requests", {acc_req : acc_req});
         }
     });
 });
 
 app.get("/accepted_requests/:id", isLoggedin, isCounsellor, (req, res)=>{
-    CallRequest.findById(req.params.id, (err, accepted_req)=>{
+    console.log(req.params.id);
+    var id = req.params.id;
+    CallRequest.findById(id, (err, accepted_req)=>{
         if(err){
-            console.log(err);
             res.render("counsellor_panel");
         } else {
-            CallRequest.findOneAndUpdate({_id : req.params.id}, {$set : {status:"Accepted"}}, (err, status_changed)=>{
+            CallRequest.findOneAndUpdate({_id : id}, {$set : {status:"Accepted"}}, (err, status_changed)=>{
                 if(err){
                     console.log(err);
                 } else{
@@ -134,7 +136,7 @@ app.get("/accepted_requests/:id", isLoggedin, isCounsellor, (req, res)=>{
             });
         }
     });
-    res.render("accepted_requests");
+    res.render("landing");
 });
 
 app.get("/after_10th",(req,res) => {
