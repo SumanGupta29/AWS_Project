@@ -104,6 +104,7 @@ app.get("/counsellor_panel", isLoggedin, isCounsellor, (req, res) => {
             res.render("counsellor_panel");
         }
         else{
+            console.log(call_req);
             res.render("counsellor_panel", {call_req : call_req});
         }
     });

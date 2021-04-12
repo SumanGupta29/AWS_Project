@@ -1,38 +1,31 @@
 <%- include('./partials/header') %> 
 
 <div class="container counsellor-panel-div">
-    <div class="row">
-        <div class="col-sm-6 col-md-5 col-lg-4">
-            <h1>Call Requests Status </h1>
-        </div>
+
+    <div class="container my-5">
+        <h1 class="display-4 text-success"><i class="fas fa-eye fa-md"></i>  Call Request Status</h1>
     </div>
-    <table class="table table-dark table-sm">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Need help for?</th>
-                <th scope="col">Role</th>
-                <th scope="col">Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% if(reqstatsflag != 0){ %>
-            <% var i=0 %>
-            <% reqstats.forEach(function(req){ %>
-            <tr>
-                <% i+=1 %>
-                <th scope="row"><%= i %></th>
-                <td><%= req.name %></td>
-                <td><%= req.email %></td>
-                <td><%= req.needHelpIn %></td>
-                <td><%= req.role %></td>
-                <td><%= req.status %></td>
-            </tr>
-            <% });} %>
-        </tbody>
-    </table>
+    <% if(reqstatsflag == 0){ %>
+        <h3 class="display-5 text-danger"><i class="fa fa-frown-o fa-md"></i>  Sorry! No request made</h3>
+    <% } %> 
+
+    <div class="row">
+        <% if(reqstatsflag != 0){ %>
+        <% reqstats.forEach(function(req){ %>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card">
+                  <center><h3 class="mt-2"><i class="fa fa-user"></i>  <%= req.name %></h3></center>
+                  <div class="card-header">
+                    <p class="card-text mx-1 mt-1"><strong>email id:</strong> <%= req.email %></p>
+                    <p class="card-text mx-1 mt-1"><strong>Phone:</strong> <%= req.phone %></p>
+                    <p class="card-text mx-1"><strong>Need help in </strong> <%= req.needHelpIn %></p>
+                    <p class="card-text mx-1"><strong>Role:</strong> <%= req.role %></p>
+                    <p class="card-text mx-1"><strong>Status:</strong> <%= req.status %></p>
+                  </div>
+                </div>
+            </div>
+        <% });} %>
+    </div>
 </div>
 
 <%- include('./partials/footer') %>  
